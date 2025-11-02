@@ -11,6 +11,14 @@
   display: block;
 }
 
+footer .grid--4-col-tablet .grid__item {
+  width: auto;
+}
+
+.footer__blocks-wrapper {
+  align-items: flex-start;
+}
+
 @media screen and (max-width: 749px) {
   .footer .grid {
     display: block;
@@ -128,7 +136,6 @@
 .footer-block--newsletter {
   display: flex;
   align-items: flex-end;
-  margin-top: 3rem;
   gap: 1rem;
 }
 
@@ -178,6 +185,7 @@
 .footer-block__newsletter {
   text-align: center;
   flex-grow: 1;
+  width: 343px;
 }
 
 .newsletter-form__field-wrapper {

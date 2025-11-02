@@ -35,50 +35,40 @@
         "heading",
         "button"
       ],
+      "disabled": true,
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
         "image_behavior": "none",
+        "desktop_content_position": "bottom-center",
         "desktop_content_alignment": "center",
+        "show_text_box": false,
         "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
         "show_text_below": false
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "main_hero_section_rrKmtM": {
+      "type": "main-hero-section",
+      "name": "Hero Section Home",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "box_01_img": "shopify://shop_images/Rectangle_6023.png",
+        "box_01_img_mobile": "shopify://shop_images/Rectangle_6023_1.png",
+        "box_01_img_2": "shopify://shop_images/Group_1000005982.png",
+        "box_01_title": "<p>Não é só compra.<br/>É pertencimento.</p>",
+        "box_01_subtitle": "<p>Peças únicas, experiências autênticas, você no centro de tudo.</p>",
+        "box_01_btn_txt": "VER COLEÇÃO",
+        "box_01_btn_url": "shopify://pages/contact",
+        "box_02_img": "shopify://shop_images/Rectangle_6022.png",
+        "box_02_img_mobile": "shopify://shop_images/Rectangle_6022_1.png"
       }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "main_hero_section_rrKmtM"
   ]
 }
