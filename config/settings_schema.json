@@ -1400,6 +1400,45 @@
     ]
   },
   {
+    "name": "Parcelamento e desconto à vista",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "parcelamento_enabled",
+        "label": "Exibir parcelamento",
+        "default": true
+      },
+      {
+        "type": "number",
+        "id": "parcelas",
+        "label": "Quantidade de parcelas"
+      },
+      {
+        "type": "text",
+        "id": "parcelamento_texto",
+        "label": "Texto de parcelamento",
+        "default": "ou [parcelas]x de [valor_parcela] sem juros",
+        "info": "Use sempre o [parcela] e [valor_parcela] exatamente como escrito aqui, para que possamos substituir pelos valores reais, de acordo com o valor do produto. Dessa forma o texto pode ser editado com os valores sendo colocados onde preferir."
+      },
+      {
+        "type": "header",
+        "content": "Desconto à vista"
+      },
+      {
+        "type": "number",
+        "id": "desconto_porcentagem",
+        "label": "Valor do desconto em percentual",
+        "info": "Caso queira 5% de desconto coloque apenas 5"
+      },
+      {
+        "type": "text",
+        "id": "texto_desconto_porcentagem",
+        "label": "Texto do desconto",
+        "default": "À vista com desconto"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.cart.name",
     "settings": [
       {

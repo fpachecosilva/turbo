@@ -68,7 +68,7 @@
           >
             {%- for block in section.blocks -%}
               <div
-                class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% case block.type %}{% when 'brand_information' %} orderminus{% endcase %}"
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
@@ -202,9 +202,7 @@
                           id="Subscribe"
                           aria-label="{{ 'newsletter.button_label' | t }}"
                         >
-                          <span class="svg-wrapper">
-                            {{- 'icon-arrow.svg' | inline_asset_content -}}
-                          </span>
+                          Enviar
                         </button>
                       </div>
                       {%- if form.errors -%}
@@ -301,11 +299,13 @@
     </div>
     <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
       <div class="footer__copyright caption">
-        <small class="copyright__content"
-          >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
-        </small>
-        <small class="copyright__content">{{ powered_by_link }}</small>
-        {%- if section.settings.show_policy -%}
+        <div class="footer-sub">
+          <div class="brand">© WE HATE SHOPPING. Todos os direitos reservados</div>
+          <div class="created">
+            🚀 Acelerada pela Turbo Partners
+          </div>
+        </div>
+        {% comment %} {%- if section.settings.show_policy -%}
           <ul class="policies list-unstyled">
             {%- for policy in shop.policies -%}
               {%- if policy != blank -%}
@@ -317,7 +317,7 @@
               {%- endif -%}
             {%- endfor -%}
           </ul>
-        {%- endif -%}
+        {%- endif -%} {% endcomment %}
       </div>
     </div>
   </div>

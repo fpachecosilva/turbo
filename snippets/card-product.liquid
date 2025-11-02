@@ -57,6 +57,16 @@
         class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
         style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
       >
+
+        <div class="teste small-hide">
+          <div class="wrapper-destaque">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.84895 1.16431C5.87119 1.11937 5.90555 1.08155 5.94814 1.05511C5.99074 1.02866 6.03988 1.01465 6.09001 1.01465C6.14015 1.01465 6.18929 1.02866 6.23188 1.05511C6.27448 1.08155 6.30883 1.11937 6.33108 1.16431L7.5034 3.5389C7.58063 3.69519 7.69463 3.83041 7.83562 3.93295C7.97661 4.03549 8.14038 4.10228 8.31286 4.1276L10.9346 4.51127C10.9843 4.51847 11.031 4.53942 11.0693 4.57176C11.1077 4.6041 11.1363 4.64654 11.1518 4.69428C11.1674 4.74201 11.1692 4.79314 11.1572 4.84187C11.1452 4.89061 11.1198 4.93501 11.0838 4.97005L9.18779 6.81633C9.06275 6.93819 8.9692 7.0886 8.91518 7.25463C8.86116 7.42065 8.84831 7.59732 8.87771 7.76942L9.32533 10.378C9.33409 10.4276 9.32873 10.4787 9.30985 10.5255C9.29096 10.5722 9.25931 10.6127 9.21852 10.6424C9.17772 10.672 9.12942 10.6896 9.07912 10.6931C9.02882 10.6966 8.97855 10.6859 8.93404 10.6622L6.59041 9.42996C6.43598 9.34887 6.26418 9.30651 6.08976 9.30651C5.91534 9.30651 5.74353 9.34887 5.58911 9.42996L3.24598 10.6622C3.20149 10.6857 3.15128 10.6963 3.10107 10.6927C3.05085 10.6892 3.00265 10.6716 2.96193 10.642C2.92122 10.6124 2.88963 10.5719 2.87077 10.5253C2.8519 10.4786 2.84651 10.4276 2.85521 10.378L3.30231 7.76993C3.33185 7.59775 3.31905 7.42097 3.26503 7.25484C3.21101 7.08871 3.11739 6.93821 2.99223 6.81633L1.09621 4.97056C1.05997 4.93556 1.03429 4.89108 1.0221 4.8422C1.0099 4.79331 1.01168 4.74199 1.02723 4.69407C1.04278 4.64614 1.07148 4.60355 1.11006 4.57115C1.14863 4.53874 1.19553 4.51782 1.24542 4.51076L3.86665 4.1276C4.03934 4.10248 4.20332 4.03577 4.34451 3.93322C4.48569 3.83067 4.59984 3.69535 4.67713 3.5389L5.84895 1.16431Z" stroke="#484827" stroke-width="1.015" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Destaques</span>
+          </div>
+        </div>
+
         {%- if card_product.featured_media -%}
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
             <div class="media media--transparent media--hover-effect">
@@ -205,6 +215,11 @@
             {%- endif -%}
 
             {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+
+            {%- if settings.parcelamento_enabled -%}
+              {%- render 'payment-installment', product: card_product -%}              
+            {%- endif -%}
+
             {%- if card_product.quantity_price_breaks_configured? -%}
               {% if card_product.variants_count == 1 and quick_add == 'bulk' %}
                 {% liquid

@@ -1,0 +1,31 @@
+.wrapper-marcas {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 8px;
+}
+
+.wrapper-marcas .marca {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 35px 15px;
+	line-height: normal;
+	background: #F6F6F6;
+}
+
+.section-compre-por-marcas .link_all {
+	text-decoration: none;
+	font-family: "Baskervville", serif;
+	font-weight: 400;
+	line-height: 140%;
+	letter-spacing: 0;
+	font-size: 14px; 
+}
+
+@media screen and (min-width: 750px) {
+	.wrapper-marcas {
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		column-gap: 32px;
+		row-gap: 20px;
+	}	
+}

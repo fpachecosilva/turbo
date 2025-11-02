@@ -1,0 +1,131 @@
+.section-envie-sua-marca {
+	background: #ECEAE6;
+}
+
+.section-envie-sua-marca .wrapper-boxes {
+	display: flex;
+	flex-direction: column;
+	width: 100%;	
+}
+
+.section-envie-sua-marca .wrapper-boxes .box1 {
+	background-color: #eceae6;	
+} 
+
+.section-envie-sua-marca .wrapper-boxes .box1 img, 
+.section-envie-sua-marca .wrapper-boxes .box2 img
+{
+	max-width: 100%;	
+	height: 100%;	
+}
+
+.section-envie-sua-marca .wrapper-boxes .box1 img {
+	margin-left: -15px;
+	margin-right: -15px;
+	width: calc(100% + 30px);
+	max-width: calc(100% + 30px);
+}
+
+.section-envie-sua-marca .wrapper-boxes .box1 {	
+	display: flex;
+	flex-direction: column;
+}
+
+.section-envie-sua-marca .wrapper-boxes .box1 {
+	font-size: 32px;
+	line-height: 92%;
+}
+
+.section-envie-sua-marca .wrapper-boxes .box2 {
+	display: block;
+}
+
+.section-envie-sua-marca .wrapper-boxes .box2 p {
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+.section-envie-sua-marca .box-right {	
+	text-align: left;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.section-envie-sua-marca .box-right img {	
+	margin-bottom: 20px;
+}
+
+.section-envie-sua-marca .wrapper-boxes .box1,
+.section-envie-sua-marca .wrapper-boxes .box2 {
+	width: 100%;
+}
+
+
+@media screen and (min-width: 750px) {
+	.section-envie-sua-marca .wrapper-boxes {		
+		flex-direction: row;
+	}
+
+	.section-envie-sua-marca .wrapper-boxes .box1,
+	.section-envie-sua-marca .wrapper-boxes .box2 {
+		width: 100%;
+	}
+
+	.section-envie-sua-marca .wrapper-boxes .box1 {		
+		flex-direction: row;
+		padding: 0;
+		width: 45%;
+	}
+
+	.section-envie-sua-marca .wrapper-boxes .box2 {
+		width: 55%;		
+		display: flex;
+		justify-content: center;
+		padding-top: 20px;
+		padding-bottom: 30px;
+	}
+
+	.section-envie-sua-marca .wrapper-boxes .box2 p {
+		text-align: left;
+	}
+
+	.section-envie-sua-marca .wrapper-boxes .box1 img {
+		max-width: 100%;
+		margin-left: 0;
+	}
+
+	.section-envie-sua-marca .wrapper-boxes .box2 img {
+		height: auto;
+	}
+
+	.section-envie-sua-marca .box-right img {
+		display: block;		
+		margin-bottom: 20px;
+		width: 134px;
+		max-width: 134px;
+		height: auto!important;
+	}	
+
+	.section-envie-sua-marca .box-right {
+		padding: 0 20px;
+		padding-left: 100px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		text-align: center;
+		height: 100%;
+	}
+
+	.section-envie-sua-marca .box-01-title p {
+		margin: 0;
+		text-align: left;
+		line-height: 92%;
+		padding-bottom: 15px;
+		font-size: 64px;
+	}
+}

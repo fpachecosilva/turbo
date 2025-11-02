@@ -65,10 +65,344 @@
         "box_02_img": "shopify://shop_images/Rectangle_6022.png",
         "box_02_img_mobile": "shopify://shop_images/Rectangle_6022_1.png"
       }
+    },
+    "benefits_ge7UCp": {
+      "type": "benefits",
+      "blocks": {
+        "icon_text_item_CiFT63": {
+          "type": "icon_text_item",
+          "settings": {
+            "icon_size": 40,
+            "text": "Autenticidade em cada detalhe"
+          }
+        },
+        "icon_text_item_9HEhaD": {
+          "type": "icon_text_item",
+          "settings": {
+            "icon_size": 40,
+            "text": "Marcas autorais"
+          }
+        },
+        "icon_text_item_npth8X": {
+          "type": "icon_text_item",
+          "settings": {
+            "icon_size": 40,
+            "text": "Moda que conta histórias"
+          }
+        },
+        "icon_text_item_mLNCGT": {
+          "type": "icon_text_item",
+          "settings": {
+            "icon_size": 40,
+            "text": "Seja autoral, seja você"
+          }
+        },
+        "icon_text_item_yfjbqj": {
+          "type": "icon_text_item",
+          "settings": {
+            "icon_size": 40,
+            "text": "Mais que compras, conexões"
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_item_CiFT63",
+        "icon_text_item_9HEhaD",
+        "icon_text_item_npth8X",
+        "icon_text_item_mLNCGT",
+        "icon_text_item_yfjbqj"
+      ],
+      "name": "Faixa passante",
+      "settings": {
+        "start_color": "#eceae6",
+        "end_color": "#eceae6",
+        "text_color": "#484827",
+        "text_size": 16,
+        "text_weight": "400",
+        "enable_carousel": true,
+        "enable_mobile": true,
+        "carousel_speed": 20,
+        "pause_on_hover": true,
+        "layout_direction": "row",
+        "section_padding": 10,
+        "items_spacing": 10,
+        "icon_spacing": 10,
+        "show_separator": true,
+        "separator_icon": "shopify://shop_images/fc9d7af3058558e1ec7cadeb272f4aa0.svg",
+        "separator_size": 14,
+        "mobile_stack": true
+      }
+    },
+    "main_collections_FNyikt": {
+      "type": "main-collections",
+      "blocks": {
+        "collection_JKRXkJ": {
+          "type": "collection",
+          "settings": {
+            "collection": "blusas",
+            "collection_image": "shopify://shop_images/BUE06445.png"
+          }
+        },
+        "collection_M4hLJR": {
+          "type": "collection",
+          "settings": {
+            "collection": "bermudas",
+            "collection_image": "shopify://shop_images/Rectangle_60232.png"
+          }
+        },
+        "collection_AJMRWU": {
+          "type": "collection",
+          "settings": {
+            "collection": "vestidos",
+            "collection_image": "shopify://shop_images/BUE06445_1.png"
+          }
+        },
+        "collection_ybNg7r": {
+          "type": "collection",
+          "settings": {
+            "collection": "calcas",
+            "collection_image": "shopify://shop_images/BUE06445_2.png"
+          }
+        },
+        "collection_6eGP8z": {
+          "type": "collection",
+          "settings": {
+            "collection": "blusas",
+            "collection_image": "shopify://shop_images/BUE06445.png"
+          }
+        },
+        "collection_iRAAby": {
+          "type": "collection",
+          "settings": {
+            "collection": "bermudas",
+            "collection_image": "shopify://shop_images/Rectangle_60232.png"
+          }
+        },
+        "collection_rWn7jw": {
+          "type": "collection",
+          "settings": {
+            "collection": "vestidos",
+            "collection_image": "shopify://shop_images/BUE06445_1.png"
+          }
+        },
+        "collection_jXCCdr": {
+          "type": "collection",
+          "settings": {
+            "collection": "calcas",
+            "collection_image": "shopify://shop_images/BUE06445_2.png"
+          }
+        }
+      },
+      "block_order": [
+        "collection_JKRXkJ",
+        "collection_M4hLJR",
+        "collection_AJMRWU",
+        "collection_ybNg7r",
+        "collection_6eGP8z",
+        "collection_iRAAby",
+        "collection_rWn7jw",
+        "collection_jXCCdr"
+      ],
+      "name": "Carrosel de coleções",
+      "settings": {
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "main_banner_loop": false,
+        "main_banner_autoplay": false,
+        "main_banner_autoplay_time": 5
+      }
+    },
+    "featured_collection_zLFRnE": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "vestidos",
+        "products_to_show": 8,
+        "title": "Destaques da Semana",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 44,
+        "padding_bottom": 80
+      }
+    },
+    "main_buy_brands_q8Fa4k": {
+      "type": "main-buy-brands",
+      "blocks": {
+        "marca_VBKb9y": {
+          "type": "marca",
+          "settings": {
+            "brand_image": "shopify://shop_images/Vector_16.svg",
+            "brand_url": ""
+          }
+        },
+        "marca_aeRTHh": {
+          "type": "marca",
+          "settings": {
+            "brand_image": "shopify://shop_images/Group_2.svg",
+            "brand_url": ""
+          }
+        },
+        "marca_6dGhC6": {
+          "type": "marca",
+          "settings": {
+            "brand_image": "shopify://shop_images/Group_3.svg",
+            "brand_url": ""
+          }
+        },
+        "marca_z9QE8m": {
+          "type": "marca",
+          "settings": {
+            "brand_image": "shopify://shop_images/Group_4.svg",
+            "brand_url": ""
+          }
+        },
+        "marca_mhEiVL": {
+          "type": "marca",
+          "settings": {
+            "brand_image": "shopify://shop_images/Group_5.svg",
+            "brand_url": ""
+          }
+        },
+        "marca_PTjdmP": {
+          "type": "marca",
+          "settings": {
+            "brand_image": "shopify://shop_images/Group_6.svg",
+            "brand_url": ""
+          }
+        },
+        "marca_4zUzGm": {
+          "type": "marca",
+          "settings": {
+            "brand_image": "shopify://shop_images/Group_5.svg",
+            "brand_url": ""
+          }
+        },
+        "marca_8BdGUp": {
+          "type": "marca",
+          "settings": {
+            "brand_image": "shopify://shop_images/Group_6.svg",
+            "brand_url": ""
+          }
+        },
+        "marca_YmqzXf": {
+          "type": "marca",
+          "settings": {
+            "brand_image": "shopify://shop_images/Vector_16.svg",
+            "brand_url": ""
+          }
+        },
+        "marca_kRtCDY": {
+          "type": "marca",
+          "settings": {
+            "brand_image": "shopify://shop_images/Group_2.svg",
+            "brand_url": ""
+          }
+        },
+        "marca_iiLJt6": {
+          "type": "marca",
+          "settings": {
+            "brand_image": "shopify://shop_images/Group_3.svg",
+            "brand_url": ""
+          }
+        },
+        "marca_wagN4J": {
+          "type": "marca",
+          "settings": {
+            "brand_image": "shopify://shop_images/Group_4.svg",
+            "brand_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "marca_VBKb9y",
+        "marca_aeRTHh",
+        "marca_6dGhC6",
+        "marca_z9QE8m",
+        "marca_mhEiVL",
+        "marca_PTjdmP",
+        "marca_4zUzGm",
+        "marca_8BdGUp",
+        "marca_YmqzXf",
+        "marca_kRtCDY",
+        "marca_iiLJt6",
+        "marca_wagN4J"
+      ],
+      "name": "Compre por marcas",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 72,
+        "title": "Compre por marcas",
+        "show_view_all": true
+      }
+    },
+    "featured_collection_8CkkUk": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "vestidos",
+        "products_to_show": 8,
+        "title": "Mais Vendidos",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 44,
+        "padding_bottom": 80
+      }
+    },
+    "main_envie_sua_marca_XEmeBF": {
+      "type": "main-envie-sua-marca",
+      "name": "Envie sua marca",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "box_01_img": "shopify://shop_images/BUE06802.png",
+        "box_01_title": "<p>Quer vender aqui? <br/>Envie sua marca</p>",
+        "box_01_btn_txt": "ENVIE SUA MARCA",
+        "box_01_btn_url": "",
+        "box_02_img": "shopify://shop_images/l3WfJNEID0dgfbv2B0P1Ynx.svg"
+      }
     }
   },
   "order": [
     "image_banner",
-    "main_hero_section_rrKmtM"
+    "main_hero_section_rrKmtM",
+    "benefits_ge7UCp",
+    "main_collections_FNyikt",
+    "featured_collection_zLFRnE",
+    "main_buy_brands_q8Fa4k",
+    "featured_collection_8CkkUk",
+    "main_envie_sua_marca_XEmeBF"
   ]
 }

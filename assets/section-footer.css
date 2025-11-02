@@ -21,13 +21,14 @@ footer .grid--4-col-tablet .grid__item {
 
 @media screen and (max-width: 749px) {
   .footer .grid {
-    display: block;
+    display: flex;
+    flex-direction: column;    
   }
 
   .footer-block.grid__item {
     padding: 0;
-    margin: 4rem 0;
-    width: 100%;
+    margin: 10px 0;
+    width: 100%;    
   }
 
   .footer-block.grid__item:first-child {
@@ -38,6 +39,10 @@ footer .grid--4-col-tablet .grid__item {
     padding-bottom: 3rem;
     padding-left: calc(4rem / var(--font-body-scale));
     padding-right: calc(4rem / var(--font-body-scale));
+  }
+
+  .footer-block--newsletter {
+    order: -1;
   }
 }
 
@@ -108,11 +113,28 @@ footer .grid--4-col-tablet .grid__item {
   padding-right: 2rem;
 }
 
+.footer-sub {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
 @media screen and (min-width: 750px) {
+  .footer {
+    margin-top: 40px!important;
+  }
+
   .footer__column--info {
     padding-left: 0;
     padding-right: 0;
     align-items: flex-end;
+  }
+
+  .footer-sub {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 
@@ -157,7 +179,7 @@ footer .grid--4-col-tablet .grid__item {
 }
 
 .footer-block__heading {
-  margin-bottom: 2rem;
+  margin-bottom: 16px;
   margin-top: 0;
   font-size: calc(var(--font-heading-scale) * 1.6rem);
 }
@@ -295,12 +317,13 @@ footer .grid--4-col-tablet .grid__item {
 }
 
 .footer__content-bottom-wrapper--center {
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .footer__copyright {
   text-align: center;
   margin-top: 1.5rem;
+  width: 100%;
 }
 
 @media screen and (min-width: 750px) {
@@ -318,10 +341,6 @@ footer .grid--4-col-tablet .grid__item {
     opacity: 1;
     margin-top: 0;
   }
-}
-
-.footer-block__details-content {
-  margin-bottom: 4rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -368,8 +387,8 @@ footer .grid--4-col-tablet .grid__item {
 
 @media screen and (max-width: 989px) {
   .footer-block__details-content .list-menu__item--link {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -422,6 +441,10 @@ footer .grid--4-col-tablet .grid__item {
 
 .footer-block__brand-info {
   text-align: left;
+}
+
+.footer-block.orderminus {
+  order: -1
 }
 
 .footer-block:only-child .footer-block__brand-info {

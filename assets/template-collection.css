@@ -1,3 +1,12 @@
+.collection__title--desktop-slider .title {
+  font-family: "Baskervville", serif;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: 0;
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
 @media screen and (max-width: 749px) {
   .collection .grid__item:only-child {
     flex: 0 0 100%;
@@ -7,7 +16,7 @@
 
 @media screen and (max-width: 989px) {
   .collection .slider.slider--tablet {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
   }
 }
 
@@ -21,6 +30,10 @@
   .collection .loading-overlay {
     top: 0;
     right: 0;
+  }
+
+  .collection .slider--tablet.grid--peek.grid--1-col-tablet-down .grid__item, .collection  .slider--mobile.grid--peek.grid--1-col-tablet-down .grid__item {
+    width: calc(75% - var(--grid-mobile-horizontal-spacing) - 3rem);
   }
 }
 
@@ -69,15 +82,35 @@
 
 .collection__title.title-wrapper {
   margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .collection__title .title:not(:only-child) {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+}
+
+.collection__view-all .link_all {
+  text-decoration: none;
+  font-family: "Baskervville", serif;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0;
+  font-size: 14px;  
+}
+
+.collection__view-all .link_all:hover {
+  text-decoration: underline;
+}
+
+.collection .slider-buttons {
+  display: none;
 }
 
 @media screen and (min-width: 990px) {
   .collection__title--desktop-slider .title {
-    margin-bottom: 2.5rem;
+    font-size: 40px;
   }
 
   .collection__title.title-wrapper--self-padded-tablet-down {

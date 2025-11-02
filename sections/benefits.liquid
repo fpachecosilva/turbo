@@ -1,0 +1,482 @@
+<!-- Seção de banners com ícones e gradiente vermelho para branco -->
+<section class="icon-banner-section {% unless section.settings.enable_mobile %}small-hide{% endunless %}" style="background: linear-gradient(to right, {{ section.settings.start_color }} 30%, {{ section.settings.end_color }} 70%); padding: {{ section.settings.section_padding }}px 0;">
+  <div class="container">
+    {% if section.blocks.size > 0 %}
+      <div class="icon-banner-wrapper" 
+           data-carousel="{{ section.settings.enable_carousel }}"
+           data-speed="{{ section.settings.carousel_speed }}"
+           data-pause-hover="{{ section.settings.pause_on_hover }}"
+           style="overflow: hidden; position: relative;">
+        
+        <div class="icon-banner-grid{% if section.settings.enable_carousel %} carousel-content{% endif %}" 
+             style="display: flex; flex-wrap: {% if section.settings.enable_carousel %}nowrap{% else %}wrap{% endif %}; justify-content: center; align-items: center; gap: {{ section.settings.items_spacing }}px;{% if section.settings.enable_carousel %} animation: slide-carousel {{ section.settings.carousel_speed }}s linear infinite;{% endif %}">
+          
+          {% for block in section.blocks %}
+            {% if section.settings.show_separator %}
+              <div class="separator-icon" style="margin: 0 {{ section.settings.icon_spacing }}px; flex-shrink: 0;">
+                {% if section.settings.separator_icon %}
+                  <img src="{{ section.settings.separator_icon | image_url: width: section.settings.separator_size }}" 
+                       alt="Separador"
+                       width="{{ section.settings.separator_size }}"
+                       height="{{ section.settings.separator_size }}"
+                       style="width: {{ section.settings.separator_size }}px; height: {{ section.settings.separator_size }}px; object-fit: contain;">
+                {% else %}
+                  <svg width="{{ section.settings.separator_size }}" height="{{ section.settings.separator_size }}" viewBox="0 0 24 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_16084_7018)">
+                      <g clip-path="url(#clip1_16084_7018)">
+                        <g clip-path="url(#clip2_16084_7018)">
+                          <path d="M5.836 14.2491C6.38 15.2421 7.099 16.1541 7.887 17.0111C7.113 16.5621 6.325 16.1541 5.551 15.7731C4.397 15.2151 1.125 14.1401 1.125 16.4941C1.125 18.3711 4.166 19.6781 5.538 20.2761C6.692 20.7801 7.751 21.1611 8.851 21.3371C7.085 22.2491 5.212 23.6231 6.896 24.9021C7.887 25.6641 9 25.4741 9.91 24.6981C10.453 24.2221 10.914 23.6511 11.349 23.0651C11.621 22.6841 11.851 22.1541 12.123 21.7051C12.612 22.4801 13.209 23.2021 13.711 23.9501C14.159 24.6031 14.594 25.2151 15.232 25.7191C15.965 26.2901 17.038 26.8211 17.853 26.0721C18.803 25.2021 18.165 23.8951 17.5 23.0791C16.997 22.4671 16.373 21.7051 15.666 21.0791C17.377 20.9431 19.075 20.5621 20.541 19.6781C21.668 18.9971 23.583 17.6101 23.025 16.0451C22.143 13.5821 19.156 14.8201 16.59 16.4941C16.97 15.6781 17.255 14.8201 17.445 13.9501C17.798 12.2351 17.703 9.40506 16.06 8.31706C14.105 6.99706 12.775 10.1401 12.53 11.5411C12.259 13.1201 12.191 14.6301 12.204 16.1541C11.702 14.8881 11.159 13.6501 10.616 12.4121C9.964 10.9151 8.606 8.69806 6.638 9.58206C4.737 10.4391 5.008 12.7391 5.836 14.2491Z" fill="{{ section.settings.text_color }}"/>
+                        </g>
+                      </g>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_16084_7018">
+                        <rect width="23" height="34" fill="white" transform="translate(0.625 0.5)"/>
+                      </clipPath>
+                      <clipPath id="clip1_16084_7018">
+                        <rect width="23" height="19" fill="white" transform="translate(0.625 8)"/>
+                      </clipPath>
+                      <clipPath id="clip2_16084_7018">
+                        <rect width="23" height="19" fill="white" transform="translate(0.625 8)"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                {% endif %}
+              </div>
+            {% endif %}
+
+            <div class="icon-banner-item" {{ block.shopify_attributes }} style="display: flex; align-items: center; flex-direction: {{ section.settings.layout_direction }}; flex-shrink: 0;">            
+              <!-- Ícone -->
+              {% if block.settings.icon_image %}
+                <div class="icon-wrapper" style="margin: 0 {{ section.settings.icon_spacing }}px;">
+                  <img src="{{ block.settings.icon_image | image_url: width: block.settings.icon_size }}" 
+                       alt="{{ block.settings.text | escape }}"
+                       width="{{ block.settings.icon_size }}"
+                       height="{{ block.settings.icon_size }}"
+                       style="width: {{ block.settings.icon_size }}px; height: {{ block.settings.icon_size }}px; object-fit: contain;">
+                </div>
+              {% endif %}
+
+              <!-- Texto -->
+              {% if block.settings.text != blank %}
+                <div class="text-wrapper">
+                  <span style="color: {{ section.settings.text_color }}; font-size: {{ section.settings.text_size }}px; font-weight: {{ section.settings.text_weight }}; text-align: center; display: block; white-space: nowrap;">
+                    {{ block.settings.text }}
+                  </span>
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+
+          {% if section.settings.enable_carousel %}
+            <!-- Duplicar conteúdo para loop infinito -->
+            {% for block in section.blocks %}
+              {% if section.settings.show_separator %}
+                <div class="separator-icon" style="margin: 0 {{ section.settings.icon_spacing }}px; flex-shrink: 0;">
+                  {% if section.settings.separator_icon %}
+                    <img src="{{ section.settings.separator_icon | image_url: width: section.settings.separator_size }}" 
+                         alt="Separador"
+                         width="{{ section.settings.separator_size }}"
+                         height="{{ section.settings.separator_size }}"
+                         style="width: {{ section.settings.separator_size }}px; height: {{ section.settings.separator_size }}px; object-fit: contain;">
+                  {% else %}
+                    <svg width="{{ section.settings.separator_size }}" height="{{ section.settings.separator_size }}" viewBox="0 0 24 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_16084_7018_dup{{ forloop.index }}">
+                        <g clip-path="url(#clip1_16084_7018_dup{{ forloop.index }}">
+                          <g clip-path="url(#clip2_16084_7018_dup{{ forloop.index }}">
+                            <path d="M5.836 14.2491C6.38 15.2421 7.099 16.1541 7.887 17.0111C7.113 16.5621 6.325 16.1541 5.551 15.7731C4.397 15.2151 1.125 14.1401 1.125 16.4941C1.125 18.3711 4.166 19.6781 5.538 20.2761C6.692 20.7801 7.751 21.1611 8.851 21.3371C7.085 22.2491 5.212 23.6231 6.896 24.9021C7.887 25.6641 9 25.4741 9.91 24.6981C10.453 24.2221 10.914 23.6511 11.349 23.0651C11.621 22.6841 11.851 22.1541 12.123 21.7051C12.612 22.4801 13.209 23.2021 13.711 23.9501C14.159 24.6031 14.594 25.2151 15.232 25.7191C15.965 26.2901 17.038 26.8211 17.853 26.0721C18.803 25.2021 18.165 23.8951 17.5 23.0791C16.997 22.4671 16.373 21.7051 15.666 21.0791C17.377 20.9431 19.075 20.5621 20.541 19.6781C21.668 18.9971 23.583 17.6101 23.025 16.0451C22.143 13.5821 19.156 14.8201 16.59 16.4941C16.97 15.6781 17.255 14.8201 17.445 13.9501C17.798 12.2351 17.703 9.40506 16.06 8.31706C14.105 6.99706 12.775 10.1401 12.53 11.5411C12.259 13.1201 12.191 14.6301 12.204 16.1541C11.702 14.8881 11.159 13.6501 10.616 12.4121C9.964 10.9151 8.606 8.69806 6.638 9.58206C4.737 10.4391 5.008 12.7391 5.836 14.2491Z" fill="{{ section.settings.text_color }}"/>
+                          </g>
+                        </g>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_16084_7018_dup{{ forloop.index }}">
+                          <rect width="23" height="34" fill="white" transform="translate(0.625 0.5)"/>
+                        </clipPath>
+                        <clipPath id="clip1_16084_7018_dup{{ forloop.index }}">
+                          <rect width="23" height="19" fill="white" transform="translate(0.625 8)"/>
+                        </clipPath>
+                        <clipPath id="clip2_16084_7018_dup{{ forloop.index }}">
+                          <rect width="23" height="19" fill="white" transform="translate(0.625 8)"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  {% endif %}
+                </div>
+              {% endif %}
+
+              <div class="icon-banner-item" style="display: flex; align-items: center; flex-direction: {{ section.settings.layout_direction }}; flex-shrink: 0;">            
+                <!-- Ícone -->
+                {% if block.settings.icon_image %}
+                  <div class="icon-wrapper" style="margin: 0 {{ section.settings.icon_spacing }}px;">
+                    <img src="{{ block.settings.icon_image | image_url: width: block.settings.icon_size }}" 
+                         alt="{{ block.settings.text | escape }}"
+                         width="{{ block.settings.icon_size }}"
+                         height="{{ block.settings.icon_size }}"
+                         style="width: {{ block.settings.icon_size }}px; height: {{ block.settings.icon_size }}px; object-fit: contain;">
+                  </div>
+                {% endif %}
+
+                <!-- Texto -->
+                {% if block.settings.text != blank %}
+                  <div class="text-wrapper">
+                    <span style="color: {{ section.settings.text_color }}; font-size: {{ section.settings.text_size }}px; font-weight: {{ section.settings.text_weight }}; text-align: center; display: block; white-space: nowrap;">
+                      {{ block.settings.text }}
+                    </span>
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    {% else %}
+      <div style="text-align: center; padding: 40px 20px; color: {{ section.settings.text_color }};">
+        <p>Adicione blocos de ícones e texto para personalizar esta seção.</p>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+	.icon-banner-section {
+		font-family: "Baskervville", serif;
+		font-weight: 400;
+		line-height: 120%;
+		letter-spacing: 0;
+		text-transform: uppercase;		
+	}
+
+  .icon-banner-section .container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .icon-banner-wrapper {
+    width: 100%;
+  }
+  
+  .icon-banner-grid {
+    {% unless section.settings.enable_carousel %}
+      {% if section.settings.mobile_stack %}
+        @media (max-width: 768px) {
+          flex-direction: column !important;
+          gap: 20px !important;
+        }
+      {% endif %}
+    {% endunless %}
+  }
+  
+  .icon-banner-item {
+    {% unless section.settings.enable_carousel %}
+      {% if section.settings.mobile_stack %}
+        @media (max-width: 768px) {
+          flex-direction: column !important;
+          text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+          .icon-wrapper {
+            margin: 0 0 10px 0 !important;
+          }
+        }
+      {% endif %}
+    {% endunless %}
+  }
+  
+  .separator-icon {
+    {% unless section.settings.enable_carousel %}
+      {% if section.settings.mobile_stack %}
+        @media (max-width: 768px) {
+          display: none;
+        }
+      {% endif %}
+    {% endunless %}
+  }
+
+  /* Estilos do carrossel */
+  {% if section.settings.enable_carousel %}
+    @keyframes slide-carousel {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    
+    .carousel-content {
+      width: fit-content;
+    }
+    
+    {% if section.settings.pause_on_hover %}
+      .icon-banner-wrapper:hover .carousel-content {
+        animation-play-state: paused;
+      }
+    {% endif %}
+    
+    @media (max-width: 768px) {
+      .icon-banner-grid {
+        animation-duration: {{ section.settings.carousel_speed | times: 1.5 }}s !important;
+      }
+    }
+  {% endif %}
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const carousels = document.querySelectorAll('.icon-banner-wrapper[data-carousel="true"]');
+    
+    carousels.forEach(function(carousel) {
+      const content = carousel.querySelector('.carousel-content');
+      const pauseOnHover = carousel.dataset.pauseHover === 'true';
+      
+      if (pauseOnHover) {
+        carousel.addEventListener('mouseenter', function() {
+          content.style.animationPlayState = 'paused';
+        });
+        
+        carousel.addEventListener('mouseleave', function() {
+          content.style.animationPlayState = 'running';
+        });
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Faixa passante",
+  "class": "icon-banner-section-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Configurações de Estilo"
+    },
+    {
+      "type": "color",
+      "id": "start_color",
+      "label": "Cor inicial do gradiente",
+      "default": "#eceae6",
+      "info": "Cor do lado esquerdo do gradiente"
+    },
+    {
+      "type": "color",
+      "id": "end_color",
+      "label": "Cor final do gradiente",
+      "default": "#eceae6",
+      "info": "Cor do lado direito do gradiente"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Cor do texto",
+      "default": "#484827"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Tamanho do texto",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "text_weight",
+      "label": "Peso da fonte",
+      "options": [
+        {
+          "value": "300",
+          "label": "Leve"
+        },
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Médio"
+        },
+        {
+          "value": "600",
+          "label": "Semi-negrito"
+        },
+        {
+          "value": "700",
+          "label": "Negrito"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "header",
+      "content": "Configurações do Carrossel"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_carousel",
+      "label": "Ativar carrossel",
+      "default": true,
+      "info": "Os itens ficarão passando automaticamente"
+    },
+		{
+      "type": "checkbox",
+      "id": "enable_mobile",
+      "label": "Exibir no mobile",
+      "default": true      
+    },
+    {
+      "type": "range",
+      "id": "carousel_speed",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "s",
+      "label": "Velocidade do carrossel",
+      "default": 20,
+      "info": "Tempo para completar uma volta completa"
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pausar ao passar o mouse",
+      "default": true,
+      "info": "Pausa o carrossel quando o usuário passa o mouse por cima"
+    },
+    {
+      "type": "header",
+      "content": "Layout e Espaçamento"
+    },
+    {
+      "type": "select",
+      "id": "layout_direction",
+      "label": "Direção do layout",
+      "options": [
+        {
+          "value": "row",
+          "label": "Horizontal (ícone ao lado do texto)"
+        },
+        {
+          "value": "column",
+          "label": "Vertical (ícone acima do texto)"
+        }
+      ],
+      "default": "row"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 10,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Espaçamento interno da seção",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "items_spacing",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Espaçamento entre itens",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "icon_spacing",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "label": "Espaçamento do ícone",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Separadores"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_separator",
+      "label": "Mostrar ícones separadores",
+      "default": true,
+      "info": "Exibe ícones entre os itens"
+    },
+    {
+      "type": "image_picker",
+      "id": "separator_icon",
+      "label": "Ícone separador personalizado",
+      "info": "Se não selecionado, será usado um ícone padrão"
+    },
+    {
+      "type": "range",
+      "id": "separator_size",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Tamanho do separador",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Responsividade"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_stack",
+      "label": "Empilhar no mobile (apenas sem carrossel)",
+      "default": true,
+      "info": "No mobile, os itens ficam um abaixo do outro quando o carrossel está desativado"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon_text_item",
+      "name": "Item com Ícone",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Ícone",
+          "info": "Selecione uma imagem para usar como ícone"
+        },
+        {
+          "type": "range",
+          "id": "icon_size",
+          "min": 20,
+          "max": 80,
+          "step": 5,
+          "unit": "px",
+          "label": "Tamanho do ícone",
+          "default": 40
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto",
+          "placeholder": "Digite o texto aqui",
+          "default": "Novo item"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Faixa passante",
+      "blocks": [
+        {
+          "type": "icon_text_item",
+          "settings": {
+            "text": "vegana"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
